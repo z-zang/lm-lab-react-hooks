@@ -7,7 +7,7 @@ export interface Task {
     text: string;
     done: boolean;
 }
-export interface Type {
+export interface ActionType {
     type: string
 }
 
@@ -17,7 +17,7 @@ const initialTasks: Task[] = [
     { id: 2, text: 'Lennon Wall pic', done: false },
 ];
 
-const reducer = (tasks: Task[], action: Type & any) => {
+const reducer = (tasks: Task[], action: ActionType & any) => {
     switch (action.type) {
         case 'ADD_TASK':
             return [
