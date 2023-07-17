@@ -10,13 +10,12 @@ interface TTodo {
 }
 
 export const APICall = () => {
-    const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos/1')
-    const [todo, setTodo] = useState<TTodo | null>(null)
+    const [todo, setTodo] = useState<TTodo>()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(url)
+                const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
                 const data = await res.json()
                 setTodo(data)
             } catch (err) {
@@ -25,10 +24,7 @@ export const APICall = () => {
         };
 
         fetchData();
-        return () => {
-            // cleanup
-        }
-    }, [url]);
+    }, []);
 
     return (
         <>
