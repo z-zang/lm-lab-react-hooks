@@ -18,7 +18,6 @@ const initialTasks: Task[] = [
 ];
 
 const reducer = (tasks: Task[], action: Type & any) => {
-    console.log('tasks', tasks, 'action', action)
     switch (action.type) {
         case 'ADD_TASK':
             return [
@@ -64,7 +63,6 @@ export function TaskApp() {
     }
 
     function handleDeleteTask(taskId: number) {
-        console.log('taskid', taskId)
         dispatch({
             type: 'DELETE_TASK',
             id: taskId
