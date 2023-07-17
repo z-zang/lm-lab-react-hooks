@@ -16,11 +16,10 @@ export const useTodo = () => {
         const url = 'https://jsonplaceholder.typicode.com/todos/1';
         const fetchData = async () => {
             try {
-
                 const response = await fetch(url);
                 if (response.status === 200) {
                     const json = await response.json();
-                    setTodo(json)
+                    setTodo(json as TodoResponse)
                     setIsFetching(false)
                 }
             } catch (e: unknown) {
