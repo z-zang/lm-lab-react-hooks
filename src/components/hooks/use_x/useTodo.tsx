@@ -35,9 +35,3 @@ export const useTodo = () => {
 
     return [todo, isFetching]
 }
-
-
-// const [data, setData] = useState<TodoResponse>();
-// const [isFetching, setIsFetching] = useState(true);
-
-
